@@ -1,0 +1,87 @@
+#container {
+    width: 100%;
+    height: 610px;
+    margin: auto;
+    margin-top: 0;
+    display: flex;
+    /* gap: 5px; */
+    /* padding-top: 100%; */
+    /* border: 1px solid green; */
+}
+
+.left {
+    top: 0;
+    width: 30%;
+    height: 100%;
+    /* border: 1px solid blue; */
+}
+
+.right {
+    background-color: yellow;
+    top: 0;
+    /* padding-left: 10px; */
+    margin: auto;
+    /* margin-left: 5px; */
+    width: 70%;
+    height: 100%;
+    /* background-image: url("https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/2021-12/Blinkit.jpg"); */
+    /* border: 1px solid red; */
+}
+
+.right>img {
+    width: 100%;
+    height: 50%;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.login {
+    width: 80%;
+    height: 80%;
+    margin-top: 50px;
+    margin-left: 50px;
+    /* border: 1px solid black; */
+}
+
+.login>h1,
+img {
+    margin-left: 10px;
+    color: blue;
+}
+
+.login>img {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    color: blue;
+}
+
+input {
+    width: 275px;
+    height: 40px;
+    border-radius: 10px;
+    /* color: rgb(21, 199, 60); */
+    font-size: 15px;
+    border-color: aqua;
+    margin: 10px;
+}
+
+.submit {
+    width: 80px;
+    height: 40px;
+    /* margin: auto; */
+    margin-left: 35%;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+    background-color: rgb(7, 108, 240);
+    border: none;
+}
