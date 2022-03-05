@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/683b4b40e3.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>cart</title>
+    <style id='c-p-s'>
+       * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+        #top-layer{
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            margin-top: 3%;
+            ;
+
+        }
+        #c-p-info{
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        #levels{
+            display: flex;
+        }
+        #levels>hr{
+            background-color: grey;
+            border-left: solid grey ;
+            height: 0.1px;
+            width: 100px;
+            margin: 15px 10px 0px 5px ;
+        }
+        #levels>span{
+            margin: 5px 5px 0px 10px;
+        }
+        #left-side-cart-items{
+          border-radius: 14px;
+          box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        }
+
+        #indicator-of-items-in-cart{
+          padding: 5%;
+          display: flex;
+          justify-content: space-between;
+        }
+        #items-shower>div{
+          display: flex;
+
+        }
+
+        #items-shower>img{
+          width: 150px;
+          height: 100px;
+          margin-right: 15px;
+        }
+        #count-items{
+          color: grey;
+          font-size: 14px;
+          font-weight: lighter;
+        }
+        #items-shower>div>button{
+          width: 30px;
+          height: 20px;
+
+          margin: 100px 10px 0px 5px;
+          background-color: skyblue;
+        }
+        #items-shower>div>h4{
+          margin: 50px 10px 0px 5px ;
+          color: slategray;
+        }
+        #bottom-cart-view{
+          margin: auto;
+          margin: 3%;
+          display: grid;
+          grid-template-columns: 45% 50%;
+          grid-template-rows: 25% 50%;
+          grid-gap: 4%;
+
+
+        }
+        #apply-promo-code{
+          box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+          border-radius: 10px;
+          margin-bottom: 50px;
+        }
+        #apply-promo-code>div{
+          display: flex;
+          justify-content: space-between;
+          padding: 4%;
+        }
+        #apply-promo-code>div>h5{
+          color: red;
+        }
+        #apply-promo-code>div>input{
+          width: 50%;
+          margin-left: -50px;
+          border: none;
+          box-shadow: rgba(241, 241, 241, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        }
+        #apply-promo-code>div>p:hover{
+          cursor: pointer;
+          color:grey;
+        }
+        #payment-details-final{
+
+          box-shadow: rgb(255, 255, 255) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+          border-radius: 10px;
+        }
+        #payment-details-final>div>div{
+          display: flex;
+          justify-content: space-between;
+          padding: 1%;
+        }
+        #payment-details-final>div{
+          width: 80%;
+          margin: auto;
+        }
+        #payment-details-final>div>div>p:nth-child(1){
+          color: grey;
+          margin-bottom: 15x;
+          font-weight: 400;
+          font-size: 14px;
+        }
+        #payment-btn>button{
+          width: 200px;
+          height: 40px;
+          background-color:#008ECC ;
+          color: white;
+          border-radius: 8px;
+          border: hidden;
+          margin-top: 20px;
+          font-size: 16px;
+        }
+        #saved-price{
+          color: rgb(81, 129, 8);
+        }
+
+    </style>
+  </head>
+  <body>
+        </div>
+        <div id='cart-page-starting-point'>
+            <div id='top-layer'>
+                <div id='c-p-info'>
+                    <p>MY cart ( <span id='counter'> </span> )</p>
+                </div>
+                <div id='levels'>
+                    <img src="https://www.jiomart.com/msassets/images/icons/cart_blue_active.svg" alt=""><span>cart</span><hr>
+                    <img id='order-sum' src="https://www.jiomart.com/msassets/images/icons/orders_review_inactive.svg" alt=""><span>Order Summary</span> <hr>
+                    <img id='paym' src="https://www.jiomart.com/msassets/images/icons/payment_inactive.svg" alt=""><span>Payment</span>
+                </div>
+            </div>
+            <div id='bottom-cart-view'>
+              <div id='left-side-cart-items'>
+                <div id='indicator-of-items-in-cart'>
+                  <h3>Groceries Basket ( <span id='count-items'></span> )</h3>
+                  <h3 id='total-Bill'>bill</h3>
+                </div>
+                <div id='items-shower'>
+                  <!--  -->
+                </div>
+              </div>
+              <div id='right-side-cart-items'>
+                <div id='apply-promo-code'>
+                  <div>
+                    <h3>Apply Copoun</h3>
+                    <h5>VIEW ALL</h5>
+                  </div>
+                  <div>
+                    <img src="https://img.icons8.com/ios-filled/40/ACACAC/discount--v2.png"/>
+                    <input type="email"  id="discount-coupon-code">
+                    <p id='apl'>Apply</p>
+                  </div>
+                </div>
+                <div id='payment-details-final'>
+                  <div>
+                    <div>
+                      <h3>Payment details</h3>
+                    </div>
+                    <div>
+                      <p>MRP Total</p>
+                      <p id='total_bill_amount'></p>
+                    </div><hr>
+                    <div>
+                      <p>Product discount</p>
+                      <p id='Discounted-Price'></p>
+                    </div><hr>
+                    <div>
+                      <p>Total Amount</p>
+                      <p id='checkout_price'></p>
+                    </div>
+                    <div>
+                      <p>
+                        <!--  -->
+                      </p>
+                      <p id='saved-price'></p>
+                    </div>
+                  </div>
+                </div>
+                <div id='payment-btn'>
+                  <button id='CheckOut_Button'>Place Order</button>
+                  <button id='make-payment' hidden>Make a Payment</button>
+                </div>
+              </div>
+            </div>
+
+
+        </div>
+
+    </body>
+</html>
+<script>
+
+    let amount =0;
+    let array = JSON.parse(localStorage.getItem('cartData')) || [];
+
+    document.querySelector('#count-items').innerHTML = array.length + " "+"items "
+    document.querySelector('#counter').innerHTML = array.length
+    array.map(function(elem ,index){
+      let plus = document.createElement('button')
+      let minus = document.createElement('button')
+      plus.textContent= '+';
+      minus.textContent= '-';
+      let p= document.createElement('p');
+      p.style.marginTop = '90px'
+      var no = 1;
+
+      p.textContent = no;
+
+      let img = document.createElement('img')
+      img.setAttribute('src',elem.image_url) ;
+      let name = document.createElement('h4');
+      name.textContent = elem.type  ;
+      let value = document.createElement('h4');
+      value.textContent = elem.MRP +" /-";
+      let hr = document.createElement('hr')
+      let div = document.createElement('div')
+      div.append(img,name,value,minus,p,plus);
+      document.querySelector('#items-shower').append(div,hr)
+
+      amount+= Number(elem.MRP);
+
+      plus.addEventListener('click',function(){
+        no = no+1 ;
+        p.textContent = no ;
+        amount += Number(elem.MRP) ;
+        document.querySelector('#total-Bill').textContent = amount ;
+        document.querySelector('#total_bill_amount').textContent = amount;
+        document.querySelector('#checkout_price').textContent = amount;
+
+      });
+      minus.addEventListener('click',function(event,index){
+        no = no-1 ;
+        p.textContent = no ;
+        amount -= Number(elem.MRP) ;
+        document.querySelector('#total-Bill').textContent = amount ;
+        document.querySelector('#total_bill_amount').textContent = amount;
+        document.querySelector('#checkout_price').textContent = amount;
+        if(no<0){
+
+          array.splice(index,1);
+          localStorage.setItem('cardData',JSON.stringify(array)) ;
+          event.target.parentNode.remove();
+          document.querySelector('#count-items').innerHTML = array.length + " "+"items "
+          document.querySelector('#counter').innerHTML = array.length
+        }
+      });
+    });
+    document.querySelector('#total-Bill').textContent = amount ;
+    var discounted_amount = 0;
+    document.querySelector('#total_bill_amount').textContent = amount;
+    document.querySelector('#saved-price').textContent = Math.floor(discounted_amount);
+    document.querySelector('#Discounted-Price').textContent = Math.floor(discounted_amount);
+    document.querySelector('#checkout_price').textContent = amount;
+    document.querySelector('#apl').addEventListener('click',function(){
+      var card =  document.querySelector('#discount-coupon-code').value;
+      document.querySelector('#apl').disabled = true;
+      if(card == 'Masai30'){
+        discounted_amount = amount*0.3;
+        amount = amount - Math.floor(discounted_amount) ;
+        document.querySelector('#total_bill_amount').textContent = amount;
+        document.querySelector('#Discounted-Price').textContent = Math.floor(discounted_amount);
+        document.querySelector('#checkout_price').textContent = amount;
+        document.querySelector('#saved-price').textContent = "saved pice" +" "+Math.floor(discounted_amount);
+
+
+      }else{
+        document.querySelector('#total_bill_amount').textContent = amount;
+        document.querySelector('#Discounted-Price').textContent = Math.floor(discounted_amount);
+        document.querySelector('#checkout_price').textContent = amount;
+        document.querySelector('#saved-price').textContent ="saved pice" +" "+Math.floor(discounted_amount);
+
+
+      }
+
+    });
+    document.querySelector('#CheckOut_Button').addEventListener('click',function(){
+      document.querySelector('#CheckOut_Button').hidden = true;
+      document.querySelector('#make-payment').hidden = false;
+      document.querySelector('#make-payment').style.backgroundColor = 'grey';
+      document.querySelector('#order-sum').setAttribute('src','https://www.jiomart.com/msassets/images/icons/orders_review_active.svg');
+      document.querySelector('#make-payment').addEventListener('click',function(){
+        var obj = {
+          price_amount : amount,
+        }
+        localStorage.setItem('price',JSON.stringify(obj));
+        window.location.href = "payment.html";
+      })
+    });
+</script>

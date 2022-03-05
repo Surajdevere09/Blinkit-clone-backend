@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="../views/styles/login.css">
+</head>
+
+<body>
+    <div id="container">
+        <div class="left">
+            <div class="login">
+                <img src="https://raw.githubusercontent.com/omthakur1224/blinkit-clone-backend/om/authentication/media/Blinkit.jpg" alt=" ">
+                <h1>Login to your account</h1>
+                <form action=" " id="reg-form">
+                    <label for=" ">Enter email</label>
+                    <input type="email "  id="email"  placeholder=" Enter Registered Email ">
+                    <label for=" ">Password</label>
+                    <input type="Password" id="password" placeholder="Enter Password ">
+                    <button class="submit "  type="submit "  >Login</button>
+                </form>
+            </div>
+        </div>
+        <div class="right ">
+            <img src="https://raw.githubusercontent.com/omthakur1224/blinkit-clone-backend/om/authentication/media/Blinkit.jpg" alt=" ">
+            <img src="https://images.freekaamaal.com/post_images/1612775565.jpg " alt=" ">
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+
+const form = document.getElementById("reg-form")
+form.addEventListener('submit', registerUser);
+
+
+async function registerUser(event) {
+    event.preventDefault();
+
+
+const email = document.getElementById("email").value
+const password = document.getElementById("password").value
+
+const  result = await fetch('http://localhost:5008/login',{
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      
+        email,
+        password
+    })
+}).then((res) => res.json())
+
+console.log('result:', result)
+
+window.location.href="index.html"
+}
+</script>
