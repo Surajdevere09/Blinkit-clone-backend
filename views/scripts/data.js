@@ -53,7 +53,7 @@ async function  grocery(){
 
 
   try{
-      let res = await fetch("http://localhost:5008/grocery")
+      let res = await fetch("https://blinkit-clone-backend.herokuapp.com/grocery/")
 
       let data = await res.json()
       
